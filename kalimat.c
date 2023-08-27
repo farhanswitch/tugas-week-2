@@ -5,8 +5,8 @@ int main()
 {
 
     // Deklarasi variabel
-    char input1[100], input2[100], input3[100];
-    char reversed1[100], reversed2[100], reversed3[100];
+    char input1[100] = "", input2[100] = "", input3[100] = "";
+    char reversed1[100] = "", reversed2[100] = "", reversed3[100] = "";
     int lengthInput1, lengthInput2, lengthInput3, lengthTotal;
 
     // Proses membaca input dari user
