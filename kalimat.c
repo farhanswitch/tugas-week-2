@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
+/*
+    Function untuk membalikkan urutan huruf dari suatu kalimat
+    Function ini menerima 2 parameter, yaitu:
+        "sentence", bertipe data string (array of characters) yaitu kalimat awal
+        "result", bertipe data string (array of characters) yaitu pointer dari string yang sudah dibalik
+
+    NOTE:
+        - Function ini tidak mengembalikkan nilai, karena string (array of characters),
+          adalah sebuah pointer, sehingga dengan mengirimkannya melalui parameter. yaitu mengirim parameter "result",
+          kita bisa langsung merubah isi dari string tersebut
+*/
 void reverseString(char sentence[100], char result[100])
 {
 
