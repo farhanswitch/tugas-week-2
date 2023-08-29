@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
+void reverseString(char sentence[100], char result[100])
+{
+
+    // Dapatkan panjang string
+    int sentenceLength = strlen(sentence);
+
+    // Proses membalik urutan huruf
+    for (int x = sentenceLength - 1; x >= 0; x--)
+    {
+        // Tambahkan setiap karakter dari sentence ke reversed, dimulai dari karakter terakhir
+        strncat(result, &sentence[x], 1);
+    }
+}
 int main()
 {
 
@@ -10,6 +23,11 @@ int main()
     int lengthInput1, lengthInput2, lengthInput3, lengthTotal;
 
     // Proses membaca input dari user
+
+    /*
+        Saat menggunakan scanf, parameter nya menggunakan "%[^\n]s" supaya bisa menangkap input dari user yang memiliki spasi
+        Referensi: https://www.geeksforgeeks.org/taking-string-input-space-c-3-different-methods/
+    */
     printf("Kalimat 1 = ");
     scanf("%[^\n]s", input1);
 
@@ -36,21 +54,9 @@ int main()
     lengthTotal = lengthInput1 + lengthInput2 + lengthInput3;
 
     // Proses membalikkan urutan huruf
-    for (int x = lengthInput1 - 1; x >= 0; x--)
-    {
-        // Tambahkan setiap karakter dari input1 ke reversed1, dimulai dari karakter terakhir
-        strncat(reversed1, &input1[x], 1);
-    }
-    for (int y = lengthInput2 - 1; y >= 0; y--)
-    {
-        // Tambahkan setiap karakter dari input2 ke reversed2, dimulai dari karakter terakhir
-        strncat(reversed2, &input2[y], 1);
-    }
-    for (int z = lengthInput3 - 1; z >= 0; z--)
-    {
-        // Tambahkan setiap karakter dari input3 ke reversed3, dimulai dari karakter terakhir
-        strncat(reversed3, &input3[z], 1);
-    }
+    reverseString(input1, reversed1);
+    reverseString(input2, reversed2);
+    reverseString(input3, reversed3);
 
     // Proses menampilkan hasil ke layar
     printf("Gabungan 3 buah inputan kalimat = %s %s %s\n", input1, input2, input3);
